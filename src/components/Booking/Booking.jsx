@@ -1,15 +1,15 @@
-import React, { useRef, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./booking.css";
-import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap";
+import { Form, FormGroup, ListGroup, ListGroupItem } from "reactstrap";
 import { loadStripe } from "@stripe/stripe-js";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { BASE_URL } from "../../utils/config";
 
 const Booking = ({ tour, avgRating }) => {
   const { price, reviews, title } = tour;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { user } = useContext(AuthContext);
 
@@ -32,7 +32,7 @@ const Booking = ({ tour, avgRating }) => {
     Number(price) * Number(booking.guestSize) + Number(serviceFee);
 
   //   Send data to the server
-  const handleClick = async (e) => {
+  // const handleClick = async (e) => {
     // e.preventDefault();
 
     // console.log(booking)
@@ -62,8 +62,8 @@ const Booking = ({ tour, avgRating }) => {
     //   alert(arr.message);
     // }
 
-    console.log(booking);
-  };
+  //   console.log(booking);
+  // };
 
   const makePayment = async (e) => {
     e.preventDefault();
